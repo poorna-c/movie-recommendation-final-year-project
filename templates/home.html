@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Movie Recommendation System</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Auto Complete -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/css/autoComplete.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+    <script type="text/javascript">
+        var films = {
+            {
+                suggestions | tojson
+            }
+        };
+    </script>
+
+</head>
+
+<body id="content" style="font-family: 'Noto Sans JP', sans-serif;">
+
+    <div class="container" style="display: block;">
+
+        <h1 style="color: white;"> Movie Recommendation System</h1>
+        <div class="form-group shadow-textarea" style="margin-top: 30px;text-align: center; color: rgb(0, 0, 0);">
+            <h3 style="color: rgb(255, 255, 255); float: left; margin: 0 36px 0 50px;" class="">Enter Movie Name: </h3><input type="text" name="movie" class="movie form-control ml-5" id="autoComplete" autocomplete="off" placeholder="" style="background-color: #ffffff;width: 60%;color: #181818;" required="required" />
+            <br>
+        </div>
+
+        <div class="form-group" style="text-align: center;">
+            <button class="btn btn-success btn-block movie-button" style="margin: 0 125px 0 0;float:right; text-align: center;border-color: #e50914;width:220px;" disabled="true">Get Recommendations</button><br><br>
+        </div>
+    </div>
+
+    <div id="loader" class="text-center">
+    </div>
+
+    <div class="fail">
+        <center>
+            <h3 style="color:white;">Sorry! Unable to find Recommendations for your entry, please try another entry or check spelling</h3>
+        </center>
+    </div>
+
+    <div class="results">
+        <center>
+            <h2 id="name" class="text-uppercase"></h2>
+        </center>
+    </div>
+
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script> -->
+    <!-- <script type="text/javascript" src="{{url_for('static', filename='autocomplete.js')}}"></script> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='recommend.js')}}"></script>
+
+</body>
+
+</html>
